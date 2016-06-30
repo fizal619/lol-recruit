@@ -1,13 +1,14 @@
 'use strict'
+//require stuff
+const express        = require('express')
+const path           = require('path')
+const logger         = require('morgan')
+const bodyParser     = require('body-parser')
+const userController = require('./controllers/user_controller')
 
-const express    = require('express')
-const path       = require('path')
-const logger     = require('morgan')
-const bodyParser = require('body-parser')
-
-
-const app = express()
-const PORT = process.env.PORT || process.argv[2] || 3000
+//initiate stuff
+const app            = express()
+const PORT           = process.env.PORT || process.argv[2] || 3000
 
 //setting up directories
 app.set('views', path.join(__dirname, 'views'))
@@ -18,12 +19,17 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
 
+//set up starting routes
+app.get('/', (req,res)=>{
+  res.render('home/index')
+})
 
+app.use('/user', userController)
 
 
 
 //start the server
-app.listen(PORT, function(){
+app.listen(PORT, ()=>{
   console.log('Server started in', __dirname)
   console.log('All systems go on', PORT)
 })
