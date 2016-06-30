@@ -36,21 +36,42 @@ Cloning this repository to your server should work fine, just make sure to ```np
 
  Very rough sketch as usual.  
  
-##Technology Used
-The front end will be built with HTML, CSS, and JavaScript. It uses JQuery for manipulating the DOM elements as well as spawning new ones. It also uses Animate.css for some of the animations.
+##Technology
+The front end will be built with HTML, CSS, and JavaScript. It uses JQuery for manipulating the DOM elements as well as spawning new ones. It also uses Animate.css for some of the animations. The back end will be Express.js running on Node.js, along with MongoDB for storing data. 
 
-The back end will be Express.js running on Node.js, along with MongoDB for storing data. 
-
-Riot, the company that runs League of Legends, maintains a free API that allows developers to have access to vast amounts of player data. This will be key in player profiles since it would provide their recent match data instead of them having them type it into the app. 
-
-##Aproach Taken
+Riot, the company that runs League of Legends, maintains a free API that allows developers to have access to vast amounts of player data. 
 
 
-##Unresolved Problems
+##Approach Taken
+The data from the API will be handled by a model called ```riot.js``` this model will handle the operations to grab the statistics for the user on registration and save it for them as *middleware*. These statistics would be things that would affect a guest's decision to recruit them; such as amount of times they went **AFK**, or how well they performed in their particular **roles** (no one wants a support that doesn't *assist*). All of this information will appear on their summary on the front page. 
+
+Messages will be stored using the ```user.js``` model. To populate the user's dashboard when guests respond to their posts. So each user would have an array of message objects(sender and message body).  
+
+#####How will this look in theory?
+
+A user would look like this:
+
+```
+{
+	name: 'John Doe',
+	email: 'john@fbi.com',
+	username: 'player1',
+	password_hash?,
+	stats: [ to be decided ],
+	messages: [{ from: 'fizal@hg.co', content: 'pls play with me'}],
+	accepted:this.messages[0]	
+}
 
 
+```
 
+My endpoints would be: 
 
-## Some of the Important Notes:
+|Endpoint|Description|   
+|---|---|
+|/|the root of the server, would display the homepage|   
+|/user|the user's dashboard|   
+|/user/register|the form to register a user |
+|/user/login|to start a session for a user|
 
 
