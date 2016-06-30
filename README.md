@@ -15,7 +15,7 @@ You can find the live version [here](#).
 Cloning this repository to your server should work fine, just make sure to ```npm install``` and ```npm start``` if you need to. Also make sure to set an environment variable named ```RIOT_API``` with your API key for Riot Games (used to pull down player stats).  
 
 ## User Stories
-* As a guest I would like to browse profiles. 
+* As a guest I would like to browse profiles of users on the home page. 
 * As a guest I would like to leave a message for a user. 
 * As a user I would like to post my mini profile. 
 * As a user I would like to see my League of Legends stats automatically  in my profile.
