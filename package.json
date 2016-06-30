@@ -1,0 +1,23 @@
+{
+  "name": "lol-client",
+  "version": "0.0.0",
+  "description": "Using this app you can find teammates or build your own team if you're into that kinda thing. Just post your profile up and keep an eye on your dash board for requests. OR send a request to someone that's looking for new people to play with.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Fizal Sarif",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6",
+    "mongodb": "^2.1.18",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7",
+    "request": "^2.72.0"
+  }
+}
