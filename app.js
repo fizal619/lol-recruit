@@ -30,7 +30,10 @@ app.use(session({
   cookie: {
     maxAge: 60000
   }
-}));
+}))
+
+// Adding Method override to allow our form to delete
+app.use(methodOverride('_method'))
 
 //set up starting routes
 app.get('/', (req, res) => {

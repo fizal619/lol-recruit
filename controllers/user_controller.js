@@ -2,6 +2,7 @@
 //require express router
 const router                    = require('express').Router()
 const { createUser, loginUser } = require('../models/user')
+const {leagueIDgrab}            = require('../models/lol')
 
 
 // /register route
@@ -27,7 +28,16 @@ router.post('/login', loginUser, (req, res)=>{
 
 
 
-router.post('/new', createUser, (req,res)=>{
+// /logout
+router.get('/logout', function(req,res) {
+  req.session.destroy(function(err) {
+    if (err) throw err
+    res.redirect('/')
+  })
+}) //end /logout
+
+
+router.post('/new', leagueIDgrab, createUser, (req,res)=>{
   // console.log(req.body)
   res.redirect('/user/login')
 })

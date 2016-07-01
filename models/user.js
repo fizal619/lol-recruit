@@ -35,6 +35,7 @@ function createUser(req, res, next) {
       let userInfo = {
         name: req.body.name,
         ign: req.body.ign,
+        lol_id: req.body.lol_id,
         email: email,
         passwordDigest: hash
       }
