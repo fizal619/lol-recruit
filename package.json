@@ -1,6 +1,7 @@
 {
   "name": "lol-client",
   "version": "0.0.0",
+  "engine": "node >=6.2.0"
   "description": "Using this app you can find teammates or build your own team if you're into that kinda thing. Just post your profile up and keep an eye on your dash board for requests. OR send a request to someone that's looking for new people to play with.",
   "main": "app.js",
   "scripts": {
