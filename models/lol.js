@@ -39,25 +39,19 @@ function leagueSTATSgrab(req,res,next){
     if (error) throw error
 
     //save it to the req to pass it along
-    res.stats = JSON.parse(body)['playerStatSummaries'][14] || 'undefined'
+    try{
+      res.stats = JSON.parse(body)['playerStatSummaries'][14]
+    }catch(err){
+      res.stats = 'undefined'
+    }
+
     console.log('Got the stats for,', lol_id, 'wins:', res.stats.wins)
     next()
   })
 }
 
 
-//  let lol_id = 39074418
-//   request({
-//     url: 'https://na.api.pvp.net/api/lol/na/v1.3/stats/by-summoner/'+lol_id+'/summary',
-//     qs: {
-//       season:'SEASON2016',
-//       api_key: process.env.RIOT_DEV_KEY
-//     },
-//     method: 'GET'
-//   }, (error, response, body) => {
-//     if (error) throw error
 
-//     console.log(JSON.parse(body)['playerStatSummaries'][14])
-// })
+
 
 module.exports = {leagueIDgrab,leagueSTATSgrab}
