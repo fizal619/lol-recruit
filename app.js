@@ -7,6 +7,7 @@ const bodyParser     = require('body-parser')
 const session        = require('express-session')
 const methodOverride = require('method-override')
 const userController = require('./controllers/user_controller')
+const apiController  = require('./controllers/api_controller')
 
 //initiate stuff
 const app            = express()
@@ -41,7 +42,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/user', userController)
-
+app.use('/api', apiController)
 
 
 //start the server
