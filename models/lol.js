@@ -1,5 +1,5 @@
 const {MongoClient} = require('mongodb')
-const dbConnection  = process.env.MONGODB_URI
+const dbConnection  = process.env['MONGODB_URI'] ||'mongodb://localhost:27017/lol-recruit'
 const request       = require('request')
 
 //function to grab league id and drop it in the req object for the other middleware to save.
