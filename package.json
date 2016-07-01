@@ -1,7 +1,9 @@
 {
   "name": "lol-client",
   "version": "0.0.0",
-  "engines": {"node":"6.2.0"},
+  "engines": {
+    "node": "6.2.0"
+  },
   "description": "Using this app you can find teammates or build your own team if you're into that kinda thing. Just post your profile up and keep an eye on your dash board for requests. OR send a request to someone that's looking for new people to play with.",
   "main": "app.js",
   "scripts": {
@@ -12,6 +14,7 @@
   "author": "Fizal Sarif",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
     "ejs": "^2.4.2",
     "express": "^4.14.0",
