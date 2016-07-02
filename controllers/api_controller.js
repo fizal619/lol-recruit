@@ -15,9 +15,9 @@ router.get('/getid', leagueIDgrab, (req,res)=>{
   res.json({lol_id: req.body.lol_id})
 }) //end /getid
 
-router.get('/allusers', listUsers, (req,res)=>{
-  res.json(res.users)
-})
+// router.get('/allusers', listUsers, (req,res)=>{
+//   res.json(res.users)
+// })
 
 //export it
 module.exports = router

@@ -8,6 +8,7 @@ const session        = require('express-session')
 const methodOverride = require('method-override')
 const userController = require('./controllers/user_controller')
 const apiController  = require('./controllers/api_controller')
+const { listUsers }  = require('./models/user')
 
 //initiate stuff
 const app            = express()
@@ -37,8 +38,8 @@ app.use(session({
 app.use(methodOverride('_method'))
 
 //set up starting routes
-app.get('/', (req, res) => {
-  res.render('home/index', {user: req.session.user})
+app.get('/', listUsers, (req, res) => {
+  res.render('home/index', {user: req.session.user, users:res.users})
 })
 
 app.use('/user', userController)

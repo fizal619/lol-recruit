@@ -1,4 +1,37 @@
 <% include ../partials/head %>
-<h1>Home</h1>
-
+<h4>Home</h4>
+<hr>
+<main id="content">
+      <% if(!users.length){  %>
+        <p><%= 'No Results, sorry' %></p>
+      <% } else { %>
+  <% let columnCount = 0 %>
+      <% users.forEach( function(profile){ %>
+        <% if(columnCount === 0){ %>
+          <div class="row">
+            <div class="animated rollIn four columns card">
+              <p>Name: <%= profile.name %></p>
+              <p>IGN: <%= profile.ign %></p>
+              <p id="<%= profile.lol_id %>"></p>
+            </div>
+        <% columnCount++ %>
+        <% }else if(columnCount === 1){ %>
+          <div class="animated rollIn four columns card">
+              <p>Name: <%= profile.name %></p>
+              <p>IGN: <%= profile.ign %></p>
+              <p id="<%= profile.lol_id %>"></p>
+            </div>
+          <% columnCount++ %>
+        <% }else{ %>
+          <div class="animated rollIn four columns card">
+              <p>Name: <%= profile.name %></p>
+              <p>IGN: <%= profile.ign %></p>
+              <p id="<%= profile.lol_id %>"></p>
+            </div>
+          </div>
+          <% columnCount = 0 %>
+        <% } %>
+      <% }) %>
+  <% } %>
+</main>
 <% include ../partials/footer %>

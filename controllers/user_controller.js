@@ -1,8 +1,8 @@
 'use strict'
 //require express router
-const router                         = require('express').Router()
-const { createUser, loginUser }      = require('../models/user')
-const {leagueIDgrab,leagueSTATSgrab} = require('../models/lol')
+const router                               = require('express').Router()
+const { createUser, loginUser, listUsers } = require('../models/user')
+const {leagueIDgrab,leagueSTATSgrab}       = require('../models/lol')
 
 
 // /register route
