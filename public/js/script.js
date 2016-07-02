@@ -1,22 +1,34 @@
 $(document).ready(function() {
   console.log('ready for action!')
 
-  // MAIN PAGE
+  // function sleep(milliseconds) {
+  // var start = new Date().getTime();
+  // for (var i = 0; i < 1e7; i++) {
+  //   if ((new Date().getTime() - start) > milliseconds){
+  //     break;
+  //   }
+  // }
+  // }
 
-  //select some stuff
-  // $content = $('#content')
+  // // MAIN PAGE
+
+  // //select some stuff
+  // let $spans = $('span')
 
   // // fill the page
-  // $.ajax({
-  //   url: '/api/allusers',
-  //   method: 'get',
-  //   success:(data)=>{
-  //     console.log(data)
-  //     data.forEach((user)=>{
+  // let ids = []
 
-  //     })
-  //   }
-  // })
+  // for (var i = 0; i < $spans.length; i++) {
+  //   ids.push($($spans[i]).attr('id'))
+  // }
+
+  // for (var i = 0; i < ids.length; i++) {
+  //   $.get('/api/stats?lol_id='+ids[i], (data=>{
+  //     $('#'+ids[i]).text(data.wins)
+  //     console.log(data.wins)
+  //     sleep(1000)
+  //   }))
+  // }
 
   // END MAIN PAGE
 

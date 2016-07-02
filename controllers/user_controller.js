@@ -29,8 +29,8 @@ router.post('/login', loginUser, (req, res)=>{
 
 
 // /logout
-router.get('/logout', function(req,res) {
-  req.session.destroy(function(err) {
+router.get('/logout', (req,res) => {
+  req.session.destroy((err) => {
     if (err) throw err
     res.redirect('/')
   })
@@ -44,7 +44,11 @@ router.post('/new', leagueIDgrab, createUser, (req,res)=>{
 
 // / route
 router.get('/', (req,res)=>{
-  res.render('user/index', {user: req.session.user})
+  if((typeof req.session.user) != 'undefined'){
+    res.render('user/index', {user: req.session.user})
+  }else{
+    res.redirect('/')
+  }
 }) //end /
 
 //export it

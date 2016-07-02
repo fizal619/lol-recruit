@@ -41,11 +41,11 @@ function leagueSTATSgrab(req,res,next){
     //save it to the req to pass it along
     try{
       res.stats = JSON.parse(body)['playerStatSummaries'][14]
+      console.log('Got the stats for,', lol_id, 'wins:', res.stats.wins)
     }catch(err){
       res.stats = 'undefined'
     }
 
-    console.log('Got the stats for,', lol_id, 'wins:', res.stats.wins)
     next()
   })
 }

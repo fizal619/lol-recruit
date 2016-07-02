@@ -12,21 +12,21 @@
             <div class="animated rollIn four columns card">
               <p>Name: <%= profile.name %></p>
               <p>IGN: <%= profile.ign %></p>
-              <p id="<%= profile.lol_id %>"></p>
+              <p><span id="<%= profile.lol_id %>"> </span></p>
             </div>
         <% columnCount++ %>
         <% }else if(columnCount === 1){ %>
           <div class="animated rollIn four columns card">
               <p>Name: <%= profile.name %></p>
               <p>IGN: <%= profile.ign %></p>
-              <p id="<%= profile.lol_id %>"></p>
+              <p><span id="<%= profile.lol_id %>"> </span></p>
             </div>
           <% columnCount++ %>
         <% }else{ %>
           <div class="animated rollIn four columns card">
               <p>Name: <%= profile.name %></p>
               <p>IGN: <%= profile.ign %></p>
-              <p id="<%= profile.lol_id %>"></p>
+              <p><span id="<%= profile.lol_id %>"> </span></p>
             </div>
           </div>
           <% columnCount = 0 %>
