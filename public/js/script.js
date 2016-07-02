@@ -1,37 +1,36 @@
 $(document).ready(function() {
   console.log('ready for action!')
 
-  // function sleep(milliseconds) {
-  // var start = new Date().getTime();
-  // for (var i = 0; i < 1e7; i++) {
-  //   if ((new Date().getTime() - start) > milliseconds){
-  //     break;
-  //   }
-  // }
-  // }
+  // POPULATE STATS home/index and user/index
 
-  // // MAIN PAGE
+  // grab all the divs that need to be worked on
+  let stats = $('.stats')
 
-  // //select some stuff
-  // let $spans = $('span')
-
-  // // fill the page
-  // let ids = []
-
-  // for (var i = 0; i < $spans.length; i++) {
-  //   ids.push($($spans[i]).attr('id'))
-  // }
-
-  // for (var i = 0; i < ids.length; i++) {
-  //   $.get('/api/stats?lol_id='+ids[i], (data=>{
-  //     $('#'+ids[i]).text(data.wins)
-  //     console.log(data.wins)
-  //     sleep(1000)
-  //   }))
-  // }
-
-  // END MAIN PAGE
+  //find by id
 
 
+  //call for the data
+  $.ajax({
+    url: '/api/allusers',
+    method: 'get',
+    success: (data) => {
+      for (let i = 0; i < stats.length; i++) {
+        let normal = $(stats[i]).find('#normal')
+        let ranked = $(stats[i]).find('#ranked')
+        let assists = $(stats[i]).find('#assists')
+
+        // find the user in the data that was returned, that id is the current div
+        let user = data.find((user) => {
+          return user.lol_id == $(stats[i]).attr('id')
+        })
+
+        $(normal).text(user.stats[0].wins)
+        $(ranked).text(user.stats[1].wins)
+        $(assists).text(user.stats[0].aggregatedStats.totalAssists)
+      }
+    }
+  })
+
+  // END POPULATE STATS
 
 });

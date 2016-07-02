@@ -36,6 +36,7 @@ function createUser(req, res, next) {
         name: req.body.name,
         ign: req.body.ign,
         lol_id: req.body.lol_id,
+        stats: req.body.stats,
         email: email,
         passwordDigest: hash
       }
@@ -47,11 +48,21 @@ function createUser(req, res, next) {
   }
 }
 
-
+// Making sure not to return the user's sensitive info when used.
 function listUsers(req,res,next){
    MongoClient.connect(dbConnection, (err, db)=>{
     db.collection('users').find().toArray((err,data)=>{
-      res.users = data
+      let clean = []
+      for(user in data){
+        let cleaned = {
+          name: data[user].name,
+          ign: data[user].ign,
+          lol_id: data[user].lol_id,
+          stats: data[user].stats
+        }
+        clean.push(cleaned)
+      }
+      res.users = clean
       next()
     })
   })

@@ -12,21 +12,33 @@
             <div class="animated rollIn four columns card">
               <p>Name: <%= profile.name %></p>
               <p>IGN: <%= profile.ign %></p>
-              <p><span id="<%= profile.lol_id %>"> </span></p>
+              <div id="<%= profile.lol_id %>" class="stats">
+                <p>Normal Wins: <div class="bar" id="normal"></div></p>
+                <p>Ranked Wins: <div class="bar" id="ranked"></div></p>
+                <p>Assists: <div class="bar" id="assists"></div></p>
+              </div>
             </div>
         <% columnCount++ %>
         <% }else if(columnCount === 1){ %>
           <div class="animated rollIn four columns card">
               <p>Name: <%= profile.name %></p>
               <p>IGN: <%= profile.ign %></p>
-              <p><span id="<%= profile.lol_id %>"> </span></p>
+              <div id="<%= profile.lol_id %>" class="stats">
+                <p>Normal Wins: <div class="bar" id="normal"></div></p>
+                <p>Ranked Wins: <div class="bar" id="ranked"></div></p>
+                <p>Assists: <div class="bar" id="assists"></div></p>
+              </div>
             </div>
           <% columnCount++ %>
         <% }else{ %>
           <div class="animated rollIn four columns card">
               <p>Name: <%= profile.name %></p>
               <p>IGN: <%= profile.ign %></p>
-              <p><span id="<%= profile.lol_id %>"> </span></p>
+              <div id="<%= profile.lol_id %>" class="stats">
+                <p>Normal Wins: <div class="bar" id="normal"></div></p>
+                <p>Ranked Wins: <div class="bar" id="ranked"></div></p>
+                <p>Assists: <div class="bar" id="assists"></div></p>
+              </div>
             </div>
           </div>
           <% columnCount = 0 %>

@@ -19,7 +19,7 @@
         <li><a href="/user/logout">Logout</a></li>
         <li><a href="/user">User</a></li>
       </ul>
-      <h5><% if((typeof user) != 'undefined'){ %>
+      <h5 id="welcome"><% if((typeof user) != 'undefined'){ %>
       Welcome, <%= user.name %>
       <% } %></h5>
     </header>

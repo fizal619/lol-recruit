@@ -1,7 +1,21 @@
 <% include ../partials/head %>
 <hr>
 <% if((typeof user) != 'undefined'){ %>
-  <p>IGN: <%= user.ign %></p>
-  <p>Stats:</p>
+  <div class="row">
+    <div class="six columns user">
+      <!-- to be loaded from db through ajax -->
+      <p><%= user.name %></p>
+      <div id="<%= user.lol_id %>" class="stats">
+        <p>Normal Wins: <div class="bar" id="normal"></div></p>
+        <p>Ranked Wins: <div class="bar" id="ranked"></div></p>
+        <p>Assists: <div class="bar" id="assists"></div></p>
+
+      </div>
+    </div>
+
+    <div class="six columns messages">
+      <!-- to be loaded from db through user session-->
+    </div>
+  </div>
 <% } %>
 <% include ../partials/footer %>

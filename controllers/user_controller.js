@@ -37,7 +37,7 @@ router.get('/logout', (req,res) => {
 }) //end /logout
 
 
-router.post('/new', leagueIDgrab, createUser, (req,res)=>{
+router.post('/new', leagueIDgrab, leagueSTATSgrab, createUser, (req,res)=>{
   // console.log(req.body)
   res.redirect('/user/login')
 })
