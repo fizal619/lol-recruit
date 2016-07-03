@@ -13,7 +13,7 @@ function createMessage(req,res,next){
     //drop it in
     db.collection('messages').insertOne(message,(err, result)=>{
       if (err) throw err
-      console.log('Message Recieved:',req.body.lol_id)
+      console.log('Message Recieved:',req.body.ign)
       next()
     })
   })

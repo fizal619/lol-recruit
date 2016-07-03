@@ -33,4 +33,33 @@ $(document).ready(function() {
 
   // END POPULATE STATS
 
+  // MODALLLLLL!!!!!!!!
+
+  $('#close').click((event)=>{
+    $('#modalOuter').fadeOut('fast', ()=> {
+      // some code if needed
+    });
+  })
+
+  $('button.message').click((event)=>{
+    let ign = event.target.dataset.ign
+
+    function sendMessage (){
+      let data = {
+        to: ign,
+        from: $('#from').val(),
+        content: $('#messageContent').val()
+      }
+      $('#sendMessage').unbind()
+      console.log(data)
+    }
+
+    $('#modalOuter').fadeIn('fast', (event)=>{
+      $('#to').text(ign)
+      $('#sendMessage').click(sendMessage)
+    })
+  })
+
+  // END MODALLLLLLLL!!!!!!
+
 });

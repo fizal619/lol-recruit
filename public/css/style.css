@@ -1,3 +1,58 @@
+
+/*MODAL */
+
+body#modalInner{
+  overflow: auto;
+}
+
+#modalOuter{
+  width:100%;
+  height:100vh;
+  background-color: rgba(0,0,0,0.8);
+  margin: -11px;
+  position: fixed;
+  z-index: 1;
+  display:none;
+}
+
+.modalInnerContent{
+  width:60%;
+  height: auto;
+  margin:0 auto;
+  transform: translateY(-25%);
+  top:25%;
+  position:relative;
+  text-align: center;
+}
+
+.modalInnerContent textarea {
+  width:100%;
+}
+
+
+.modalInnerContent #sendMessage {
+  right:0;
+  position:absolute;
+}
+
+.modalInnerContent #close {
+  left:0;
+  position:absolute;
+}
+
+#modalInner{
+  position: relative;
+  height:50vh;
+  width:50%;
+  top:50%;
+  margin:0 auto;
+  transform: translateY(-25vh);
+  background-color: white;
+  border-radius: 5px;
+}
+
+/*END MODAL*/
+
 #nav{
   list-style: none;
   text-align: right;
@@ -9,4 +64,8 @@
 
 footer{
   text-align: center;
+}
+
+header{
+  /*position:fixed;*/
 }
