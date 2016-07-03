@@ -6,7 +6,8 @@ function createMessage(req,res,next){
 
     //build the message object
     let message = {
-      to: req.body.ign,
+      to: req.body.to,
+      from: req.body.from,
       content: req.body.content,
       selected: false
     }

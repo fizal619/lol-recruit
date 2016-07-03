@@ -51,7 +51,13 @@ $(document).ready(function() {
         content: $('#messageContent').val()
       }
       $('#sendMessage').unbind()
-      console.log(data)
+
+      $.post('/api/message/new', data, (data)=> {
+        console.log('sent')
+        $('#from').val('')
+        $('#messageContent').val('')
+        $('#modalOuter').fadeOut('fast')
+      })
     }
 
     $('#modalOuter').fadeIn('fast', (event)=>{
