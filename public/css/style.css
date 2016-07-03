@@ -65,7 +65,14 @@ body#modalInner{
 }
 
 .contain{
-  margin:10px;
+  margin:20px;
+}
+
+.message{
+  padding:10px;
+  border-radius: 5px;
+  background-color: red;
+  color:white;
 }
 
 #middle{
