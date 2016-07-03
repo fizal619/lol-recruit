@@ -48,7 +48,7 @@ function createUser(req, res, next) {
   }
 }
 
-// Making sure not to return the user's sensitive info when used.
+// Making sure not to return the user's sensitive info when used. [x]
 function listUsers(req,res,next){
    MongoClient.connect(dbConnection, (err, db)=>{
     db.collection('users').find().toArray((err,data)=>{
@@ -67,6 +67,7 @@ function listUsers(req,res,next){
     })
   })
 }
+
 
 
 

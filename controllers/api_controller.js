@@ -2,19 +2,26 @@
 const router                         = require('express').Router()
 const {leagueIDgrab,leagueSTATSgrab} = require('../models/lol')
 const {listUsers}                    = require('../models/user')
+const { createMessage, getMessages } = require('../models/message')
 
 
 
-// // /stats route
-// router.get('/stats', leagueSTATSgrab, (req,res)=>{
-//   res.json(res.stats)
-// }) //end /stats
+//MESSAGES
 
-// // /getid route
-// router.get('/getid', leagueIDgrab, (req,res)=>{
-//   res.json({lol_id: req.body.lol_id})
-// }) //end /getid
+//create a message
+router.post('/message/new', createMessage, (req,res)=>{
+  res.json({status: 'success'})
+})
 
+
+//read them all
+router.get('/message/user', getMessages, (req, res)=>{
+  res.json(res.messages)
+})
+
+//END MESSAGES
+
+// USERS
 //returns all the usable data for users in the db
 router.get('/allusers', listUsers, (req,res)=>{
   res.json(res.users)
@@ -29,7 +36,7 @@ router.get('/userstats', (req,res)=>{
   }
 })
 
-
+//END USERS
 
 //export it
 module.exports = router
