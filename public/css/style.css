@@ -1,7 +1,12 @@
 #nav{
   list-style: none;
+  text-align: right;
 }
 
 #nav li{
   display: inline-block;
+}
+
+footer{
+  text-align: center;
 }
