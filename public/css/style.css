@@ -16,8 +16,7 @@ a{
 footer{
   text-align: center;
   background-color: #EFFFE9;
-  margin-top: -10px;
-  padding:20px;
+  padding:30px;
 }
 
 h1{
@@ -35,6 +34,7 @@ header{
 main{
   background-color:#EFFFE9;
   padding:20px;
+  margin-bottom: -10px;
   border-radius: 5px;
 }
 
