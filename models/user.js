@@ -49,6 +49,39 @@ function createUser(req, res, next) {
   }
 }
 
+//when the user clicks accept on any message it will set his/her status to taken in the db
+function userTaken(req,res,next){
+  MongoClient.connect(dbConnection, (err, db)=>{
+    try{
+      db.collection('users').updateOne({ign: req.session.user.ign}, {$set: {taken: true}}, (err, results)=>{
+        if (err) throw err
+        res.message = {status: OK}
+        next()
+      })
+    }catch(e){
+      res.message = e
+      next()
+    }
+    })
+}
+
+//separate function to make them available, making one function that toggles would have been unwise.
+function userAvailable(req,res,next){
+   MongoClient.connect(dbConnection, (err, db)=>{
+    try{
+      db.collection('users').updateOne({ign: req.session.user.ign}, {$set: {taken: false}}, (err, results)=>{
+        if (err) throw err
+        res.message = {status: OK}
+        next()
+      })
+    }catch(e){
+      res.message = e
+      next()
+    }
+    })
+}
+
+
 // Making sure not to return the user's sensitive info when used. [x]
 function listUsers(req,res,next){
    MongoClient.connect(dbConnection, (err, db)=>{
@@ -59,6 +92,7 @@ function listUsers(req,res,next){
           name: data[user].name,
           ign: data[user].ign,
           lol_id: data[user].lol_id,
+          taken: data[user].taken,
           stats: data[user].stats
         }
         clean.push(cleaned)
@@ -72,4 +106,4 @@ function listUsers(req,res,next){
 
 
 
-module.exports = { createUser, loginUser, listUsers }
+module.exports = { createUser, loginUser, listUsers, userTaken, userAvailable}

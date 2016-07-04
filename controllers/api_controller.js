@@ -1,7 +1,7 @@
 'use strict'
-const router                         = require('express').Router()
-const {leagueIDgrab,leagueSTATSgrab} = require('../models/lol')
-const {listUsers}                    = require('../models/user')
+const router                                        = require('express').Router()
+const {leagueIDgrab,leagueSTATSgrab}                = require('../models/lol')
+const {listUsers, userTaken, userAvailable}         = require('../models/user')
 const { createMessage, getMessages, deleteMessage } = require('../models/message')
 
 
@@ -19,8 +19,19 @@ router.get('/message/user', getMessages, (req, res)=>{
   res.json(res.messages)
 })
 
+//delete all messages from a single sender when rejected.
 router.delete('/message/user/delete', deleteMessage, (req,res)=>{
   res.sendStatus(200)
+})
+
+//for a user to set themself as taken
+router.put('/message/user/taken', userTaken, (req,res)=>{
+  res.json(res.message)
+})
+
+//for a user to set them self to available through ajax
+router.put('/message/user/available', userAvailable, (req,res)=>{
+  res.json(res.message)
 })
 
 //END MESSAGES

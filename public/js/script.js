@@ -34,7 +34,7 @@ $(document).ready(function() {
 
   // END POPULATE STATS
 
-  //POPULATE MESSAGES!
+  //POPULATE MESSAGES! user/index
   let messageContain = $('.contain')
 
   //fetch the messages for the user, no need to pass arguments, it only returns messages for the logged in user.
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
   //END POPULATE MESSAGES
 
-  //DELETING MESSAGES
+  //DELETING MESSAGES user/index
 
   function deleteMessage(event){
     let from = event.target.dataset.from
@@ -69,7 +69,7 @@ $(document).ready(function() {
 
   //END DELETING MESSAGES
 
-  // MODALLLLLL!!!!!!!!
+  // MODALLLLLL!!!!!!!!  home/index
 
   $('#close').click((event)=>{
     $('#modalOuter').fadeOut('fast', ()=> {
