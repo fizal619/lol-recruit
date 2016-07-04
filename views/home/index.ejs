@@ -2,6 +2,14 @@
 <h4>Home</h4>
 <hr>
 <main id="content">
+      <!-- clean users of those that are taken -->
+      <% try { %>
+      <% function taken(profile){ return !profile.taken } %>
+      <% users = users.filter(profile)  %>
+      <% catch(e) { %>
+      <% console.log('no users') %>
+      <% } %>
+      <!-- end clean  -->
       <% if(!users.length){  %>
         <p><%= 'No Results, sorry' %></p>
       <% } else { %>
