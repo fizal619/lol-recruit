@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/bower_components/skeleton/css/skeleton.css">
+    <!-- <link rel="stylesheet" href="/bower_components/skeleton/css/skeleton.css"> -->
+    <link rel="stylesheet" href="/skeleton-plus/skeleton.plus.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+
     <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="/js/script.js"></script>
   </head>
@@ -18,6 +21,7 @@
         <br>
         <input type="text" placeholder="Your email or ign" id="from">
         <br>
+        <br>
         <button class="button button-primary" id="sendMessage">Send</button>
         <button class="button button-primary" id="close">Close</button>
       </div>
@@ -28,10 +32,10 @@
       <h1><a href="/">LOL Recruit</a></h1>
       <ul id="nav">
         <% if((typeof user) == 'undefined'){ %>
-        <li><a href="/user/login">Login</a></li>
-        <li><a href="/user/register">Register</a></li>
+        <li><a href="/user/login">Login</a> |</li>
+        <li><a href="/user/register">Register</a> |</li>
         <% } else { %>
-        <li><a href="/user/logout">Logout</a></li>
+        <li><a href="/user/logout">Logout</a> |</li>
         <li><a href="/user">Profile</a></li>
         <% } %>
       </ul>

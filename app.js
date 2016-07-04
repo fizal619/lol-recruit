@@ -19,6 +19,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')))
+app.use('/skeleton-plus', express.static(__dirname + '/node_modules/skeleton-plus/css/'))
 
 //setting up morgan and other parser middleware
 app.use(logger('dev'))

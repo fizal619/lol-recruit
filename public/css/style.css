@@ -71,8 +71,13 @@ body#modalInner{
 .message{
   padding:10px;
   border-radius: 5px;
-  background-color: red;
+  background-color: black;
   color:white;
+}
+
+.message .button-danger{
+  position: absolute;
+  right:30px;
 }
 
 #middle{
@@ -83,6 +88,9 @@ body#modalInner{
 
 /* END MESSAGES ON USER PAGE */
 
+a{
+  text-decoration:none;
+}
 
 #nav{
   list-style: none;

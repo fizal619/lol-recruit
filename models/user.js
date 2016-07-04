@@ -34,10 +34,11 @@ function createUser(req, res, next) {
     MongoClient.connect(dbConnection, (err, db)=>{
       let userInfo = {
         name: req.body.name,
+        email: email,
         ign: req.body.ign,
         lol_id: req.body.lol_id,
         stats: req.body.stats,
-        email: email,
+        taken: false,
         passwordDigest: hash
       }
       db.collection('users').insertOne(userInfo, (err, result)=>{
