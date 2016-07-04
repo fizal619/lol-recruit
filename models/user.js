@@ -55,7 +55,8 @@ function userTaken(req,res,next){
     try{
       db.collection('users').updateOne({ign: req.session.user.ign}, {$set: {taken: true}}, (err, results)=>{
         if (err) throw err
-        res.message = {status: OK}
+        res.message = {status: 'OK'}
+        req.session.user.taken = true
         next()
       })
     }catch(e){
@@ -71,7 +72,8 @@ function userAvailable(req,res,next){
     try{
       db.collection('users').updateOne({ign: req.session.user.ign}, {$set: {taken: false}}, (err, results)=>{
         if (err) throw err
-        res.message = {status: OK}
+        res.message = {status: 'OK'}
+        req.session.user.taken = false
         next()
       })
     }catch(e){

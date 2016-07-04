@@ -34,6 +34,25 @@ $(document).ready(function() {
 
   // END POPULATE STATS
 
+  //AVAILABILITY
+
+  //simply tells the server that the logged in user is available to pick
+  $('#setAvailable').click((event)=>{
+    $.ajax({
+      url: '/api/message/user/available',
+      type: 'PUT',
+      success: (data)=>{
+        location.reload()
+      },
+      fail: (error)=>{
+        console.log(error)
+      }
+    })
+  })
+
+  //END AVAILABILITY
+
+
   //POPULATE MESSAGES! user/index
   let messageContain = $('.contain')
 
