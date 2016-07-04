@@ -20,6 +20,25 @@ function createMessage(req,res,next){
   })
 }
 
+function deleteMessage(req,res,next){
+  MongoClient.connect(dbConnection, (err, db)=>{
+    let from = req.query.from
+    let ign
+    // try to grab the user from the session to make sure only they can delete their own messages
+    try{
+      ign = req.session.user.ign
+    }catch(e){
+      //set to undefined if the above fails (session.user doesn't exist if the user isn't logged in)
+      ign = 'undefined'
+    }
+
+    // nuke them
+    console.log(ign,from)
+    db.collection('messages').deleteMany({$and: [{to: ign}, {from: from}]})
+    next()
+  })
+}
+
 function getMessages(req,res,next){
   MongoClient.connect(dbConnection, (err, db)=>{
     let ign
@@ -35,11 +54,10 @@ function getMessages(req,res,next){
     //drop it in
     db.collection('messages').find({to: ign}).toArray((err,data)=>{
       if (err) throw err
-      console.log(data)
       res.messages = data
       next()
     })
   })
 }
 
-module.exports = { createMessage, getMessages }
+module.exports = { createMessage, getMessages, deleteMessage }

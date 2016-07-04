@@ -44,13 +44,30 @@ $(document).ready(function() {
       $('#middle').remove()
       let p = ''
       messages.map((message)=>{
-        p += '<p class="message">'+ message.content + '<br><strong>from: '+message.from+'</strong><br> <br><button class="button button-success"> <span class="fa fa-check"></span> Accept</button><button class="button button-danger"><span class=" fa fa-ban"></span> Reject</button></p>'
+        p += '<p class="message">'+ message.content + '<br><strong>from: '+message.from+'</strong><br> <br><button class="button button-success"> <span class="fa fa-check"></span> Accept</button><button class="button button-danger deleteRequest" data-from="'+message.from+'"><span class=" fa fa-ban"></span> Reject</button></p>'
       })
       $(messageContain).html(p)
+      $('.deleteRequest').click(deleteMessage)
     }
   })
 
   //END POPULATE MESSAGES
+
+  //DELETING MESSAGES
+
+  function deleteMessage(event){
+    let from = event.target.dataset.from
+    $.ajax({
+      url: '/api/message/user/delete?from='+from,
+      type: 'DELETE',
+      success: (data)=>{
+        $(event.target).parent().fadeOut('fast')
+
+      }
+    })
+  }
+
+  //END DELETING MESSAGES
 
   // MODALLLLLL!!!!!!!!
 

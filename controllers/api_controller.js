@@ -2,7 +2,7 @@
 const router                         = require('express').Router()
 const {leagueIDgrab,leagueSTATSgrab} = require('../models/lol')
 const {listUsers}                    = require('../models/user')
-const { createMessage, getMessages } = require('../models/message')
+const { createMessage, getMessages, deleteMessage } = require('../models/message')
 
 
 
@@ -17,6 +17,10 @@ router.post('/message/new', createMessage, (req,res)=>{
 //read them all
 router.get('/message/user', getMessages, (req, res)=>{
   res.json(res.messages)
+})
+
+router.delete('/message/user/delete', deleteMessage, (req,res)=>{
+  res.sendStatus(200)
 })
 
 //END MESSAGES
