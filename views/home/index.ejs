@@ -5,14 +5,14 @@
       <!-- clean users of those that are taken -->
       <% try { %>
       <% function taken(profile){ return !profile.taken } %>
-      <% users = users.filter(profile)  %>
-      <% catch(e) { %>
+      <% users = users.filter(taken)  %>
+      <% } catch(e) { %>
       <% console.log('no users') %>
       <% users = [] %>
       <% } %>
       <!-- end clean  -->
       <% if(!users.length){  %>
-        <p><%= 'No Results, sorry' %></p>
+        <p><%= 'No Summoners available to play, sorry.' %></p>
       <% } else { %>
   <% let columnCount = 0 %>
       <% users.forEach( function(profile){ %>
