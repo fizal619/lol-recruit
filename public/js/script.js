@@ -25,9 +25,9 @@ $(document).ready(function() {
         })
 
         //populate the stats; TODO make these bars
-        $(normal).text(user.stats[0].wins)
-        $(ranked).text(user.stats[1].wins)
-        $(assists).text(user.stats[0].aggregatedStats.totalAssists)
+        $(normal).css('width',user.stats[0].wins/20)
+        $(ranked).css('width',(user.stats[1].wins)*2)
+        $(assists).css('width',user.stats[0].aggregatedStats.totalAssists/200)
       }
     }
   })
