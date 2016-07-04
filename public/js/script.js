@@ -6,9 +6,6 @@ $(document).ready(function() {
   // grab all the divs that need to be worked on
   let stats = $('.stats')
 
-  //find by id
-
-
   //call for the data
   $.ajax({
     url: '/api/allusers',
@@ -50,6 +47,22 @@ $(document).ready(function() {
     })
   })
 
+  //tell the server that the user is taken
+  function acceptButton(event){
+    let from = event.target.dataset.from
+    $.ajax({
+      url:'/api/message/user/taken?from='+from,
+      type: 'PUT',
+      success: (data)=>{
+        console.log(data)
+        location.reload()
+      },
+      fail: (error)=>{
+        console.log(error)
+      }
+    })
+  }
+
   //END AVAILABILITY
 
 
@@ -63,10 +76,17 @@ $(document).ready(function() {
       $('#middle').remove()
       let p = ''
       messages.map((message)=>{
-        p += '<p class="message">'+ message.content + '<br><strong>from: '+message.from+'</strong><br> <br><button class="button button-success"> <span class="fa fa-check"></span> Accept</button><button class="button button-danger deleteRequest" data-from="'+message.from+'"><span class=" fa fa-ban"></span> Reject</button></p>'
+
+        //if selected drop it in the selected slot
+        if(message.selected){
+          $('#selected').text(message.from)
+        }
+
+        p += '<p class="message">'+ message.content + '<br><strong>from: '+message.from+'</strong><br> <br><button class="button button-success acceptRequest" data-from="'+message.from+'"> <span class="fa fa-check"></span> Accept</button><button class="button button-danger deleteRequest" data-from="'+message.from+'"><span class=" fa fa-ban"></span> Reject</button></p>'
       })
       $(messageContain).html(p)
       $('.deleteRequest').click(deleteMessage)
+      $('.acceptRequest').click(acceptButton)
     }
   })
 

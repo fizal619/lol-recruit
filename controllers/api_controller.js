@@ -2,7 +2,7 @@
 const router                                        = require('express').Router()
 const {leagueIDgrab,leagueSTATSgrab}                = require('../models/lol')
 const {listUsers, userTaken, userAvailable}         = require('../models/user')
-const { createMessage, getMessages, deleteMessage } = require('../models/message')
+const { createMessage, getMessages, deleteMessage, selectedMessage } = require('../models/message')
 
 
 
@@ -25,7 +25,7 @@ router.delete('/message/user/delete', deleteMessage, (req,res)=>{
 })
 
 //for a user to set themself as taken
-router.put('/message/user/taken', userTaken, (req,res)=>{
+router.put('/message/user/taken', selectedMessage,  userTaken, (req,res)=>{
   res.json(res.message)
 })
 

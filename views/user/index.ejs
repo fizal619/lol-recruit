@@ -14,15 +14,19 @@
     </div>
 
     <div class="six columns messages">
-      <!-- to be loaded from db through ajax-->
-      <div class="messagebox">
-        <div class="contain">
-          <p id="middle">-no messages-</p>
-        </div>
-      </div>
-      <br>
+
       <% if (user.taken){ %>
         <button class="button button-warning" id="setAvailable"><span class="fa fa-thumbs-up" ></span> Set me as available!</button>
+        <br>
+        <br>
+        <p>You should message:<strong> <span id="selected"></span> </strong> right away!</p>
+      <% } else { %>
+          <!-- to be loaded from db through ajax-->
+          <div class="messagebox">
+            <div class="contain">
+              <p id="middle">-no messages-</p>
+            </div>
+          </div>
       <% } %>
     </div>
   </div>

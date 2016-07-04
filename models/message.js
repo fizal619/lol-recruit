@@ -20,6 +20,22 @@ function createMessage(req,res,next){
   })
 }
 
+//to set the selected message, will use in tandem with setting the user status
+function selectedMessage(req,res,next){
+  MongoClient.connect(dbConnection, (err, db)=>{
+    try{
+      db.collection('messages').updateMany({from: req.query.from}, {$set: {selected: true}}, (err, results)=>{
+        if (err) throw err
+        res.message = {status: 'OK'}
+        next()
+      })
+    }catch(e){
+      res.message = e
+      next()
+    }
+    })
+}
+
 function deleteMessage(req,res,next){
   MongoClient.connect(dbConnection, (err, db)=>{
     let from = req.query.from
@@ -60,4 +76,4 @@ function getMessages(req,res,next){
   })
 }
 
-module.exports = { createMessage, getMessages, deleteMessage }
+module.exports = { createMessage, getMessages, deleteMessage, selectedMessage }
