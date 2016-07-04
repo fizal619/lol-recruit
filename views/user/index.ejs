@@ -3,13 +3,13 @@
   <hr>
   <% if((typeof user) != 'undefined'){ %>
     <div class="row">
-      <div class="six columns user">
+      <div class="six columns user card">
         <!-- to be loaded from db through ajax -->
-        <p><%= user.name %></p>
+        <p><%= user.ign %></p>
         <div id="<%= user.lol_id %>" class="stats">
-          <p>Normal Wins: <div class="bar" id="normal"></div></p>
-          <p>Ranked Wins: <div class="bar" id="ranked"></div></p>
-          <p>Assists: <div class="bar" id="assists"></div></p>
+          <p>Normal Wins: <span class="bar" id="normal"></span></p>
+          <p>Ranked Wins: <span class="bar" id="ranked"></span></p>
+          <p>Assists: <span class="bar" id="assists"></span></p>
 
         </div>
       </div>
