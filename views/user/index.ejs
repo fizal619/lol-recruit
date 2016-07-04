@@ -1,30 +1,32 @@
 <% include ../partials/head %>
-<hr>
-<% if((typeof user) != 'undefined'){ %>
-  <div class="row">
-    <div class="six columns user">
-      <!-- to be loaded from db through ajax -->
-      <p><%= user.name %></p>
-      <div id="<%= user.lol_id %>" class="stats">
-        <p>Normal Wins: <div class="bar" id="normal"></div></p>
-        <p>Ranked Wins: <div class="bar" id="ranked"></div></p>
-        <p>Assists: <div class="bar" id="assists"></div></p>
+<main>
+  <hr>
+  <% if((typeof user) != 'undefined'){ %>
+    <div class="row">
+      <div class="six columns user">
+        <!-- to be loaded from db through ajax -->
+        <p><%= user.name %></p>
+        <div id="<%= user.lol_id %>" class="stats">
+          <p>Normal Wins: <div class="bar" id="normal"></div></p>
+          <p>Ranked Wins: <div class="bar" id="ranked"></div></p>
+          <p>Assists: <div class="bar" id="assists"></div></p>
 
-      </div>
-    </div>
-
-    <div class="six columns messages">
-      <!-- to be loaded from db through ajax-->
-      <div class="messagebox">
-        <div class="contain">
-          <p id="middle">-no messages-</p>
         </div>
       </div>
-      <br>
-      <% if (user.taken){ %>
-        <button class="button button-warning" id="setAvailable"><span class="fa fa-thumbs-up" ></span> Set me as available!</button>
-      <% } %>
+
+      <div class="six columns messages">
+        <!-- to be loaded from db through ajax-->
+        <div class="messagebox">
+          <div class="contain">
+            <p id="middle">-no messages-</p>
+          </div>
+        </div>
+        <br>
+        <% if (user.taken){ %>
+          <button class="button button-warning" id="setAvailable"><span class="fa fa-thumbs-up" ></span> Set me as available!</button>
+        <% } %>
+      </div>
     </div>
-  </div>
-<% } %>
+  <% } %>
+</main>
 <% include ../partials/footer %>

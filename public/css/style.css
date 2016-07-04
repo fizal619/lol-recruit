@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald|Montserrat);
+
 a{
   text-decoration:none;
 }
@@ -15,21 +17,30 @@ footer{
   text-align: center;
 }
 
+h1{
+  font-family: 'Oswald';
+}
+
 header{
   /*position:fixed;*/
-  background-color: white;
-  padding:20px;
+  background-color: #EFFFE9;
+  margin-bottom: -10px;
+  padding:40px;
+  border-radius: 5px;
 }
 
 main{
-  background-color:white;
-  padding:20px;
+  background-color:#EFFFE9;
+  padding:40px;
+  border-radius: 5px;
 }
 
 body{
   background:url(http://eskipaper.com/images/league-of-legends-wallpaper-21.jpg);
   background-size: cover;
+  font-family: 'Montserrat';
 }
+
 
 
 /*MODAL */
@@ -92,7 +103,7 @@ body#modalInner{
 .messagebox{
   width: 100%;
   height: 50vh;
-  background-color: grey;
+  background-color: #2EC4B6;
   border-radius: 5px;
   overflow-y: scroll;
 }
@@ -104,7 +115,7 @@ body#modalInner{
 .message{
   padding:10px;
   border-radius: 5px;
-  background-color: black;
+  background-color: #011627;
   color:white;
 }
 
@@ -133,7 +144,7 @@ body#modalInner{
   /*float:right;*/
   height:20px;
   /*width:100px;*/
-  background-color: grey;
+  background-color: #E71D36;
   margin-bottom:-5px;
 }
 

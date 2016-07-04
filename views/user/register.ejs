@@ -1,24 +1,26 @@
 <% include ../partials/head %>
-<h4>Register</h4>
-<hr>
-    <div class="row">
-        <div class="four columns">
-        <form action="/user/new" method="post">
-            <label for="">Full Name:</label>
-            <input name="name" type="text">
-            <br>
-            <label for="">Email:</label>
-            <input name="email" type="text">
-            <br>
-            <label for="">League of Legends IGN:</label>
-            <input name="ign" type="text">
-            <br>
-            <label for="">Password:</label>
-            <input name="password" type="password">
-            <br>
-            <br>
-            <input id="loginButton" type="Submit" value="Register">
-          </form>
+<main>
+    <h4>Register</h4>
+    <hr>
+        <div class="row">
+            <div class="four columns">
+            <form action="/user/new" method="post">
+                <label for="">Full Name:</label>
+                <input name="name" type="text">
+                <br>
+                <label for="">Email:</label>
+                <input name="email" type="text">
+                <br>
+                <label for="">League of Legends IGN:</label>
+                <input name="ign" type="text">
+                <br>
+                <label for="">Password:</label>
+                <input name="password" type="password">
+                <br>
+                <br>
+                <input id="loginButton" type="Submit" value="Register">
+              </form>
+            </div>
         </div>
-    </div>
+</main>
 <% include ../partials/footer %>
