@@ -1,18 +1,20 @@
 <% include ../partials/head %>
-<h4>Login</h4>
-<hr>
-<div class="row">
-  <div class="four columns">
-    <form action="/user/login" method="post">
-      <label for="">Email</label>
-      <input name="email" type="text">
-      <br>
-      <label for="">Password</label>
-      <input name="password" type="password">
-      <br>
-      <br>
-      <input class="button button-primary" type="Submit" id="loginButton">
-    </form>
+<main>
+  <h4>Login</h4>
+  <hr>
+  <div class="row">
+    <div class="four columns">
+      <form action="/user/login" method="post">
+        <label for="">Email</label>
+        <input name="email" type="text">
+        <br>
+        <label for="">Password</label>
+        <input name="password" type="password">
+        <br>
+        <br>
+        <input class="button button-primary" type="Submit" id="loginButton">
+      </form>
+    </div>
   </div>
-</div>
+</main>
 <% include ../partials/footer %>

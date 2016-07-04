@@ -1,7 +1,7 @@
 <% include ../partials/head %>
+<main id="content">
 <h4>Home</h4>
 <hr>
-<main id="content">
       <!-- clean users of those that are taken -->
       <% try { %>
       <% function taken(profile){ return !profile.taken } %>
@@ -22,9 +22,9 @@
               <p>Name: <%= profile.name %></p>
               <p>IGN: <%= profile.ign %></p>
               <div id="<%= profile.lol_id %>" class="stats">
-                <p>Normal Wins: <div class="bar" id="normal"></div></p>
-                <p>Ranked Wins: <div class="bar" id="ranked"></div></p>
-                <p>Assists: <div class="bar" id="assists"></div></p>
+                <p>Normal Wins: <span class="bar" id="normal"></span></p>
+                <p>Ranked Wins: <span class="bar" id="ranked"></span></p>
+                <p>Assists: <span class="bar" id="assists"></span></p>
                 <button class="button message button-primary" data-ign="<%= profile.ign %>">Message</button>
               </div>
             </div>
@@ -34,9 +34,9 @@
               <p>Name: <%= profile.name %></p>
               <p>IGN: <%= profile.ign %></p>
               <div id="<%= profile.lol_id %>" class="stats">
-                <p>Normal Wins: <div class="bar" id="normal"></div></p>
-                <p>Ranked Wins: <div class="bar" id="ranked"></div></p>
-                <p>Assists: <div class="bar" id="assists"></div></p>
+                <p>Normal Wins: <span class="bar" id="normal"></span></p>
+                <p>Ranked Wins: <span class="bar" id="ranked"></span></p>
+                <p>Assists: <span class="bar" id="assists"></span></p>
                 <button class="button message button-primary" data-ign="<%= profile.ign %>">Message</button>
               </div>
             </div>
@@ -46,9 +46,9 @@
               <p>Name: <%= profile.name %></p>
               <p>IGN: <%= profile.ign %></p>
               <div id="<%= profile.lol_id %>" class="stats">
-                <p>Normal Wins: <div class="bar" id="normal"></div></p>
-                <p>Ranked Wins: <div class="bar" id="ranked"></div></p>
-                <p>Assists: <div class="bar" id="assists"></div></p>
+                <p>Normal Wins: <span class="bar" id="normal"></span></p>
+                <p>Ranked Wins: <span class="bar" id="ranked"></span></p>
+                <p>Assists: <span class="bar" id="assists"></span></p>
                 <button class="button message button-primary" data-ign="<%= profile.ign %>">Message</button>
               </div>
             </div>
