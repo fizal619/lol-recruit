@@ -42,6 +42,8 @@ Cloning this repository to your server should work fine, just make sure to ```np
 
 ## Wire Frame
 ![](http://i.imgur.com/eho5n5H.jpg)
+<br>
+[My flowcharts for my routes can be found here.](http://imgur.com/a/uNXkQ)
 
  Very rough sketch as usual.  
  
