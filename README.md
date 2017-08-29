@@ -23,13 +23,13 @@ Cloning this repository to your server should work fine, just make sure to ```np
 * As a user I would like my profile to disappear from the front page if I accept a team request. ✓
 * As a user when I get a request I would like to get an email notification. x
 
-#####Bonus Features:
+##### Bonus Features:
 
 * A team section that users can create teams.  
 * As a captain I would like to create a team and have it shown on the team roster. 
 * As a captain I would like my team roster page to include the profile details of my team members.
 
-#####TODO List
+##### TODO List
 
 * Form Validation
 * Allow users to delete their accounts in their profile. .
@@ -47,18 +47,18 @@ Cloning this repository to your server should work fine, just make sure to ```np
 
  Very rough sketch as usual.  
  
-##Technology
+## Technology
 The front end will be built with HTML, CSS, and JavaScript. It uses JQuery for manipulating the DOM elements as well as spawning new ones. It also uses Animate.css for some of the animations. The back end will be Express.js running on Node.js, along with MongoDB for storing data. 
 
 Riot, the company that runs League of Legends, maintains a free API that allows developers to have access to vast amounts of player data. 
 
 
-##Approach Taken
+## Approach Taken
 The data from the API will be handled by a model called ```riot.js``` this model will handle the operations to grab the statistics for the user on registration and save it for them as *middleware*. These statistics would be things that would affect a guest's decision to recruit them; such as amount of times they went **AFK**, or how well they performed in their particular **roles** (no one wants a support that doesn't *assist*). All of this information will appear on their summary on the front page. 
 
 Messages will be stored using the ```user.js``` model. To populate the user's dashboard when guests respond to their posts. So each user would have an array of message objects(sender and message body).  
 
-#####How will this look in theory?
+##### How will this look in theory?
 
 A user would look like this:
 
