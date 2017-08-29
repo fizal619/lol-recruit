@@ -86,8 +86,8 @@ My endpoints would be:
 |/user/login|to start a session for a user|
 
 
-##Unsolved Problems
+## Unsolved Problems
 
-* My api would stop working after the 5th user registration.
+* ~~My api would stop working after the 5th user registration.~~
 
 
